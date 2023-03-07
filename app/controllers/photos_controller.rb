@@ -14,4 +14,14 @@ def show_details
   render({ :template => "photo_templates/show_details.html.erb"})
 end
 
+def delete
+  #Parameters: {"for_delete"=>" 777"}
+  the_id = params.fetch("for_delete")
+  matching_photos = Photo.where({ :id => the_id})
+  the_photo = matching_photos.at(0)
+  the_photo.destroy
+  #render({ :template => "photo_templates/delete.html.erb"})
+  redirect_to("/photos")
+end
+
 end
