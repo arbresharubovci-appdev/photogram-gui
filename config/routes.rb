@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
 get("/users" , {:controller => "users", :action =>"index"})
-end
+get("/users/:profile" , { :controller => "users" , :action => "show"})
 
+end
