@@ -44,4 +44,21 @@ def create
   #render( {:template => "photo_templates/create.html.erb"})
 end
 
+def update
+  #Parameters: {"query_image"=>"https://www.chicagobooth.edu/", "query_caption"=>"ChI", "modify_id"=>"955"}
+  the_id = params.fetch("modify_id")
+  matching_photos = Photo.where({ :id => the_id})
+  the_photo = matching_photos.at(0)
+
+  input_image =params.fetch("query_image")
+  input_caption = params.fetch("query_caption")
+
+  the_photo.image = input_image
+  the_photo.caption = input_caption
+
+  the_photo.save
+
+  render( {:template => "photo_templates/update.html.erb"})
+end
+
 end
