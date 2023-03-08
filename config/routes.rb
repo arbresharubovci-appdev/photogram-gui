@@ -5,8 +5,6 @@ get("/users/:profile" , { :controller => "users" , :action => "show"})
 get("/insert_user_record" , {:controller => "users" , :action => "record"})
 
 
-
-
 get("/insert_comment_record" , {:controller => "users" , :action => "comment"})
 
 
