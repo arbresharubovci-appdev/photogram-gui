@@ -15,8 +15,16 @@ class UsersController < ApplicationController
 
   def record
     #Parameters: {"input_username"=>"Arbresha"}
-    the_user = params.fetch("input_username")
-    
+    input_username = params.fetch("input_username")
+
+    a_new_username = User.new
+
+    a_new_username.username = input_username
+
+    a_new_username.save
+
+    next_url ="/users/" + a_new_username.id.to_s
+    redirect_to(next_url)
     
     #render({:template => "user_templates/record.html.erb"})
   end
