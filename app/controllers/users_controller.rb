@@ -15,9 +15,16 @@ class UsersController < ApplicationController
 
   def record
     #Parameters: {"input_username"=>"Arbresha"}
-    render({:template => "user_templates/record.html.erb"})
+    the_user = params.fetch("input_username")
+    
+    
+    #render({:template => "user_templates/record.html.erb"})
   end
 
+  
+  
+  
+  
   def comment 
     #Parameters: {"input_photo_id"=>"122", "input_author_id"=>"122", "input_body"=>"hello"}
     
