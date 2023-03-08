@@ -12,4 +12,16 @@ class UsersController < ApplicationController
     @the_user = matching_users.first
     render({:template => "user_templates/show.html.erb"})
   end
+
+  def record
+    #Parameters: {"input_username"=>"Arbresha"}
+    render({:template => "user_templates/record.html.erb"})
+  end
+
+  def comment 
+    #Parameters: {"input_photo_id"=>"122", "input_author_id"=>"122", "input_body"=>"hello"}
+    
+    render({:template => "user_templates/comment.html.erb"})
+  end
+
 end
