@@ -51,6 +51,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    render({:template => "user_templates/update.html.erb"})
+    # #Parameters: {"input_username"=>"Inaa"}
+    #Parameters: {"input_username"=>"Thomas R", "username"=>"username"}
+    user_id = params.fetch("input_id")
+    input_username = params.fetch("input_username")
+
+    matching_user = User.where({ :id => user_id})
+    the_user = matching_user.at(0)
+  
+    the_user.username = input_username
+   
+    the_user.save
+    
+    #render( {:template => "user_templates/update.html.erb"})
+   
+    next_url ="/users/" + the_user.username
+    redirect_to(next_url)
+  
   end
+
 end

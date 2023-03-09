@@ -10,9 +10,10 @@
 
    <dt>Edit user</dt>
   <dd>
-    <form action="/update_user/username" >
+    <form action="/update_user" >
       <label for="browser_username">Username</label>
-      <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="username">
+      <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @the_user.username %>">
+       <input id="browser_id" type="hidden" name="input_id" placeholder="Enter a username..." value="<%= @the_user.id %>">
 
       <button>Update user</button>
     </form>

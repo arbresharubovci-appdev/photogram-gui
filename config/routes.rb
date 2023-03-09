@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get("/users", { :controller => "users", :action => "index" })
   get("/users/:username", { :controller => "users", :action => "show" })
   get("/insert_user_record", { :controller => "users", :action => "record" })
-  get("/update_user/username", { :controller => "users", :action => "update" })
+  get("/update_user/", { :controller => "users", :action => "update" })
 
   get("/insert_comment_record", { :controller => "users", :action => "comment" })
 
