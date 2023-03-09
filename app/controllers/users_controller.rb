@@ -44,9 +44,8 @@ class UsersController < ApplicationController
 
     a_new_comment.save
 
-    next_url ="/photos/" + a_new_comment.id.to_s
+    next_url ="/photos/" + input_photo_id..to_s
     redirect_to(next_url)
-
     #render({:template => "user_templates/comment.html.erb"})
   end
 
